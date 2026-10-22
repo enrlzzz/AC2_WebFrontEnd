@@ -1,0 +1,7 @@
+li.btn-confirmar { text-decoration: underline; }  /* confirmar: sublinhada */
+
+.btn-confirmar { background: green; color: black; }
+.btn-remover {
+    background-color: orange;
+    color: black;
+}

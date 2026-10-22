@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cadastrar-inscricao.css">
+</head>
+<body>
+    <h1>Cadastrar Inscrição</h1>
+</body>
+</html>
+<form>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" [(ngModel)]="nome">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email">
+    <label for="oficinas">Oficinas</label>
+    <ul>
+        @for (listaInscricao of listaInscricao.inscricoes; track listaInscricao.id) {
+          <li [class.removida]="listaInscricao.removida" [class.concluida]="listaInscricao.concluida">
+            <span>{{ listaInscricao.titulo }} (prazo: {{ prazo(listaInscricao.id) }})</span>
+            <button class="btn-selecionar" (click)="selecionar(listaInscricao.id)">Selecionar</button>
+            <button class="btn-remover" (click)="remover(listaInscricao.id)">Remover</button>
+            <button class="btn-confirmar" (click)="confirmarInscricao(listaInscricao.id)">Confirmar inscrição(listaInscricao.id)</button>
+          </li>
+        }
+      </ul>  
+    <button type="submit">Cadastrar</button>
+    <button class="btn-confirmar" type="button" (click)="confirmarInscricao()">Confirmar</button>
+    <button class="btn-remover" type="button" (click)="confirmarInscricao()">Remover</button>
+
+</form>

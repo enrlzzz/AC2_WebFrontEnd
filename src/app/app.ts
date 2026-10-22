@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CadastrarInscricao } from './cadastrar-inscricao/cadastrar-inscricao';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CadastrarInscricao  ],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
