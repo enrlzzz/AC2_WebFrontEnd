@@ -13,8 +13,13 @@ export class InscricaoService {
     remover(id: number): void {
         console.log('remover', id);
     }
-    confirmarInscricao(id: number): void {
-        console.log('confirmarInscricao');
+
+    concluirInscricao(id: number): void {
+        console.log('concluirInscricao', id);
+    }
+    confirmarInscricao(nome: string, email: string, oficinas: string[]): void {
+        console.log('confirmarInscricao', nome, email, oficinas);
     }
 
+    
 }

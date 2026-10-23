@@ -16,18 +16,13 @@
     <label for="email">Email</label>
     <input type="email" id="email" name="email" [(ngModel)]="email">
     <label for="oficinas">Oficinas</label>
-    <ul>
-        @for (listaInscricao of listaInscricao.inscricoes; track listaInscricao.id) {
-          <li [class.removida]="listaInscricao.removida" [class.concluida]="listaInscricao.concluida">
-            <span>{{ listaInscricao.titulo }} (prazo: {{ prazo(listaInscricao.id) }})</span>
-            <button class="btn-selecionar" (click)="selecionar(listaInscricao.id)">Selecionar</button>
-            <button class="btn-remover" (click)="remover(listaInscricao.id)">Remover</button>
-            <button class="btn-confirmar" (click)="confirmarInscricao(listaInscricao.id)">Confirmar inscrição(listaInscricao.id)</button>
-          </li>
+    <select>
+        @for (o of oficinas; track $index) {
+         <option value="{{ o }}">{{ o }}</option>
         }
-      </ul>  
-    <button type="submit">Cadastrar</button>
+    </select>
+    <button type="button" (click)="confirmarInscricao()">Cadastrar</button>
     <button class="btn-confirmar" type="button" (click)="confirmarInscricao()">Confirmar</button>
-    <button class="btn-remover" type="button" (click)="confirmarInscricao()">Remover</button>
+    <button class="btn-remover" type="button" (click)="confirmarInscricao ()">Remover</button>
 
 </form>

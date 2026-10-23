@@ -1,3 +1,0 @@
-li.btn-confirmar { text-decoration: underline; }  /* confirmar: sublinhada */
-
-.btn-confirmar { background: green; color: black; }
